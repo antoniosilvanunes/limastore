@@ -1,0 +1,454 @@
+/* Estilos personalizados no navbar */
+
+body{
+    /* background-image: url('/quintan/quintafeira/quintafeira/samuel/salvarodequarta/salvarodequarta/limastore/fotos/Design\ sem\ nome.png'); Substitua pelo caminho real da sua imagem */
+    background-size: cover; /* Isso faz com que a imagem cubra todo o fundo */
+    background-position: center; /* Isso centraliza a imagem no fundo */
+    /* Adicione mais propriedades conforme necessário */
+}
+
+.btn-info {
+    margin-top: 5px;
+}
+
+.fecharmenu li{
+    padding: 5px;
+    background-color: aliceblue;
+    border-radius: 6%;
+}
+
+/* Estilos para o cabeçalho */
+.navbar {
+    background-color: #6bb39f; /* Define a cor de fundo do cabeçalho */
+}
+
+.navbar-brand {
+    color: black; 
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 8%;
+}
+
+.navbar-brand:hover {
+    color: black; 
+}
+
+.navbar-nav .ml-auto{
+    text-align: center;
+    white-space: nowrap;
+}
+
+.navbar-brand {
+    font-size: 150%;
+}
+
+.nav-link{
+    width: 90px;
+    text-align: center;
+}
+
+.mudar-posicao {
+    align-items: right;
+    justify-content: right;
+}
+
+
+.categorias {
+    display: none;
+    position: absolute;
+    right: 0.5%;
+    top: 40px;
+    background-color: #95c5b7;
+    padding: 20px;
+    border-radius: 5%;
+    margin-top: 22px;
+}
+
+.categorias a{
+    text-decoration: none;
+    color: black;
+}
+
+.categorias li {
+    list-style-type: none;
+    margin-bottom: 7px;
+}
+
+
+/* Estilos  */
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.cadastro-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    text-align-last: center;
+}
+
+.cadastro-form h2{
+    margin-bottom: 20px;
+    color: #24423a;
+}
+
+.cadastro-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.cadastro-form button{
+    padding: 10px 20px;
+    background-color: #513085;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: auto;
+    margin-top: auto;
+    margin-right: 10px;
+}
+
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    text-align-last: center;
+}
+
+.login-form h2{
+    margin-bottom: 20px;
+    color: #24423a;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid  gray;
+    border-radius: 5px;
+}
+
+.login-form button{
+    padding: 10px 20px;
+    background-color: #513085;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: auto;
+    margin-top: auto;
+    margin-right: 10px;
+}
+
+/* Configurações carrossel */
+
+/* * {
+    box-sizing: border-box;
+} */
+
+.corpo-carrossel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    /* min-height: 100vh; */
+}
+
+/* .carrossel{
+    box-shadow: 2px 2px 4px black;
+    overflow: hidden;
+    width: 500px;
+    height: 500px; /* Defina uma altura desejada aqui */
+*/
+
+.container-carrossel {
+    display: flex;
+    transition: 0.5s ease-in-out;
+    transform: translateX(0);
+}
+
+.imagens-carrossel {
+    object-fit: cover;
+    width: 500px;
+    height: 500px; /* Defina uma altura desejada aqui */
+}
+
+/* Configurações do footer */
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #6bb39f; /* Substitua pela cor desejada */
+    color: black;
+    padding: 20px;
+}
+
+.footer-column {
+    text-align: center;
+}
+
+br {
+    background-color: white;
+}
+
+.configs-imagens {
+    display: flex;
+    justify-content: center;
+}
+
+.configs-imagens img {
+    width: 70px;
+    height: 50px; /* Adapte a margem conforme necessário */
+}
+
+.coracao {
+    position: absolute;
+    top: -10%; /* Ajuste a posição vertical conforme necessário */
+    width: 250px; /* Ajuste a largura conforme necessário */
+    height: 250px; /* Ajuste a altura conforme necessário */
+    cursor: pointer;
+  }
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* .navigation {
+    font-size: 18px;
+    cursor: pointer;
+} */
+
+/* #cardContainer {
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+} */
+
+/* .col-lg-3 {
+    flex: 0 0 auto;
+} */
+
+/* .femininobanner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+} */
+
+/* Configurações dos cookies */
+
+.titulo-feminino{
+    color: #878dbd;
+}
+
+.titulo-masculino{
+    color: #427466;
+}
+
+.cookies-mensagem {
+    width: 80%;
+    background-color: #6bb39f;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    display: none;
+}
+
+.cookies-mensagem.mostrarmensagem{
+    display: block;
+}
+
+.cookies-mensagem .cookies-texto {
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+.cookies-mensagem .cookies-btn {
+    margin-left: 25px;
+}
+
+.cookies-mensagem .cookies-btn button {
+    background-color: #22b24c;
+    color: white;
+    font-size: 18px;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cookies-mensagem .cookies-btn button:hover {
+    transform: scale(0.9);
+}
+
+/* Configurações botão */
+
+.botao-redondo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6bb39f;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-redondo:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.botao-com-imagem {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6bb39f;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.botao-com-imagem img {
+    width: 30px;
+    height: 25px;
+}
+
+.botao-com-imagem:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* Configurações imagens footer */
+
+.imagem-insta img {
+    width: 80px;
+    height: 80px;
+}
+
+.imagem-face img {
+    margin-top: 7%;
+    width: 70px;
+    height: 70px;
+}
+
+.imagem-x img {
+    margin-top: 20%;
+    width: 75px;
+    height: 48px;
+}
+
+.sob {
+    text-align: justify; /* Para alinhar o texto ao centro */
+    max-width: 60%; /* Defina a largura máxima desejada */
+    margin: 0 auto; /* Para centralizar o conteúdo horizontalmente */
+    padding: 20px; /* Adicione preenchimento para criar uma distância das bordas do site */
+}
+
+.titulos-sobre-nos {
+    padding-top: 5%;
+}
+
+.ultimo-texto-sobre-nos {
+    text-align: center;
+    padding-top: 5%;
+}
+
+.imagem-do-sobre{
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-do-sobre img {
+    margin-top: 5%;
+    max-width: 31%; /* Para garantir que as imagens não excedam a largura máxima */
+    margin-right: 20px;
+}
+
+.titulo-feminino {
+    margin-left: 7%;
+}
+
+.titulo-masculino {
+    margin-left: 7%;
+}
+
+.botao-comprar-agora {
+    background-color: #7ac8ae;
+    border: blue;
+    color: rgb(49, 49, 49);
+}
+
+.botao-comprar-agora:hover {
+    background-color: #7ac8ae;
+    border: blue;
+    color: rgb(49, 49, 49);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center
+}
+
+.card-tittle {
+    text-align: center;
+    align-items: center;
+}
+
+.preco {
+    font-weight: bolder;
+}
+
+/* é pra adicionar apenas isso no css para funcionar a seta de retorno */
+
+
+.imagem-seta-lado {
+    width: 15px; /* Defina o valor de largura desejado para a imagem */
+    height: auto; /* Isso manterá a proporção da imagem */
+    margin-left: 20px; /* Ajuste o valor conforme necessário */
+    margin-right: 20px;
+}
+
+.logoft {
+    margin-left: 47%;
+}
+
+.logoft img{
+    width: 25%;
+    padding: 3%;
+    background-color: rgba(255, 255, 255, 0.349);
+    border-radius: 50%;
+    
+}
+

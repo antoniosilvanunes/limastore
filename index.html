@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lima Store - Moda sustentável</title>
+    <link rel="icon" href="./fotos/Azul_Ilustrativo_Game_Studio_Logo-removebg-preview.png" sizes="48x48" type="image/x-icon">
+    <!--Inclusão das bibliotecas CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap (1).css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+
+<body>
+    <!--Barra de navegação-->
+    <nav class="navbar navbar-expand-lg navbar-ligth bg-custom">
+        <div id="logoft" class="logoft">
+            <img src="./fotos/sustentável__2_-removebg-preview.png" alt="Imagem da Logo">
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mudar-posicao" id="#navbarnav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" id="feminino-link"  href="#Feminino">Feminino</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="masculino-link" href="#Masculino">Masculino</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="acessorios-link" href="#Acessórios">Acessórios</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="sobre-link" href="sobre-nos.html">Sobre Nós</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="login-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="cadastro-link" href="#">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="menu-hamburguer" href="#">
+                        <i class="fas fa-bars"></i> <!-- Ícone menu hamburguer --> 
+                    </a>
+                </li>
+            </ul>
+            <ul class="categorias">
+                <li><a href="#" data-categoria="tudo">Mostrar tudo</a></li>
+                <li><a href="#" data-categoria="masculino">Masculino</a></li>
+                <li><a href="#" data-categoria="feminino">Feminino</a></li>
+                <li><a href="#" data-categoria="Cupom" onclick="abrirPagina(event)">Cupons</a></li>
+                <div class="fecharmenu" id="cor">
+                <li><a href="#" data-categoria="fechar">Fechar Menu</a></li>
+                </div>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div id="entrada" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="./fotos/1.png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="./fotos/2.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="./fotos/3.png" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="./fotos/4.png" alt="Third slide">
+            </div>
+            <!-- Adicione mais itens do carrossel conforme necessário -->
+        </div>
+        <!-- <a class="carousel-control-prev" href="#entrada" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#entrada" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a> -->
+    </div>
+    
+    <style>
+        #entrada {
+            width: 60%; /* Ajuste o valor conforme necessário */
+            margin: auto;
+            margin-top: 0px; /* Ajuste o valor conforme necessário */
+        }
+        .carousel-inner {
+            transition: opacity 1s ease-in-out;
+        }
+        .carousel-inner .carousel-item {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .carousel-inner .active {
+            opacity: 1;
+        }
+    </style>
+
+<!-- Modal -->
+<div class="modal" id="myModal">
+    <!-- Conteúdo do modal (imagem) -->
+    <img src="" alt="Imagem do Produto" class="modal-img" id="modalImagem">
+  </div>
+  
+  <!-- Fundo do modal -->
+  <div class="modal-overlay" id="overlay"></div>
+
+  <script>
+    // Função para abrir o modal
+    function abrirModal() {
+      var imagemSrc = document.querySelector('.card-img-top').src;
+      document.getElementById('modalImagem').src = imagemSrc;
+      document.getElementById('myModal').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+  
+      // Adiciona um ouvinte de eventos para fechar o modal se clicar em qualquer lugar dentro dele
+      document.addEventListener('click', fecharModalAoClicar);
+    }
+  
+    // Função para fechar o modal
+    function fecharModal() {
+      document.getElementById('myModal').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+  
+      // Remove o ouvinte de eventos ao fechar o modal
+      document.removeEventListener('click', fecharModalAoClicar);
+    }
+  
+    // Função para fechar o modal ao clicar em qualquer lugar dentro dele
+    function fecharModalAoClicar(event) {
+      if (!document.getElementById('myModal').contains(event.target)) {
+        fecharModal();
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilo do modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 5px;
+      background-color: transparent;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+      overflow: hidden;
+    }
+  
+    /* Estilo do fundo do modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+  
+    /* Estilo da imagem no modal */
+    .modal-img {
+      max-width: 100%;
+      max-height: 90vh;
+      background-color: transparent;
+      margin-top: 10%;
+      margin-left: 30%;
+    }
+  </style>
+
+        <div class="container mt-5">
+            <div class="row">
+            <!-- Exemplo de card de anuncio -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Casaco.png" class="card-img-top" alt="Roupa1">
+                    <div class="card-body">
+                        <h5 class="card-title">Casaco Éden Sustentável</h5>
+                        <p class="card-text">Cor: Off White Floral</p>
+                        <p class="preco">R$ 180,00</p>
+                        <a href="roupa1.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126"  id="visualizador"  onclick="abrirModal()">Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                <div class="card">
+                    <img src="fotos/Casaco2.png" class="card-img-top" alt="Roupa2">
+                    <div class="card-body">
+                        <h5 class="card-title">Casaco Patchwork Jeans Sustentável</h5>
+                        <p class="card-text">Cor: Violeta</p>
+                        <p class="preco">R$ 149,90</p>
+                        <a href="roupa2.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Casaco3.png" class="card-img-top" alt="Roupa3">
+                    <div class="card-body">
+                        <h5 class="card-title">Casaco Jeans Flex sustentável</h5>
+                        <p class="card-text">Cor: Azul</p>
+                        <p class="preco">R$ 110,00</p>
+                        <a href="roupa3.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+             </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Saia3.png" class="card-img-top" alt="Roupa6">
+                    <div class="card-body">
+                        <h5 class="card-title">Saia Bordada De Cristais Sustentável</h5>
+                        <p class="card-text">Cor: Jeans Claro</p>
+                        <p class="preco">R$ 59,90</p>
+                        <a href="roupa6.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Cropped1.png" class="card-img-top" alt="Roupa7">
+                    <div class="card-body">
+                        <h5 class="card-title">Cropped Bordado De Cristais Sustentável</h5>
+                        <p class="card-text">Cor: Preto</p>
+                        <p class="preco">R$ 70,00</p>
+                        <a href="roupa7.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Calca1.png" class="card-img-top" alt="Roupa9">
+                    <div class="card-body">
+                        <h5 class="card-title">Calça Jeans Bordê Sustentável</h5>
+                        <p class="card-text">Cor: Jeans Claro Linhas Coloridas</p>
+                        <p class="preco">R$ 130,00</p>
+                        <a href="roupa9.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Calca2.png" class="card-img-top" alt="Roupa10">
+                    <div class="card-body">
+                        <h5 class="card-title">Calça Jeans Bordada Flores De Jardim Sustentável</h5>
+                        <p class="card-text">Cor: Jeans Claro</p>
+                        <p class="preco">R$ 110,00</p>
+                        <a href="roupa10.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Cropped3.png" class="card-img-top" alt="Roupa11">
+                    <div class="card-body">
+                        <h5 class="card-title">Cropped De Alça Por Sublimação Sustentável</h5>
+                        <p class="card-text">Cor: Vermelha</p>
+                        <p class="preco">R$ 60,00</p>
+                        <a href="roupa11.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Cropped4.png" class="card-img-top" alt="Roupa12">
+                    <div class="card-body">
+                        <h5 class="card-title">Cropped Drapeado Cores Vivas Sustentável</h5>
+                        <p class="card-text">Cor: Colorido</p>
+                        <p class="preco">R$ 39,90</p>
+                        <a href="roupa12.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                <div class="card">
+                    <img src="fotos/Blusa1.png" class="card-img-top" alt="Roupa13">
+                    <div class="card-body">
+                        <h5 class="card-title">Blusa De Zíper Com Gola Colarinho Star Sustentável</h5>
+                        <p class="card-text">Cor: Estampa De Estrela</p>
+                        <p class="preco">R$ 70,00</p>
+                        <a href="roupa13.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                <div class="card">
+                    <img src="fotos/Bermuda1.png" class="card-img-top" alt="Roupa14">
+                    <div class="card-body">
+                        <h5 class="card-title">Bermuda Esportiva Practicality Sustentável</h5>
+                        <p class="card-text">Cor: Branco</p>
+                        <p class="preco">R$ 69,90</p>
+                        <a href="roupa14.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                <div class="card">
+                    <img src="fotos/Blusa2.png" class="card-img-top" alt="Roupa15">
+                    <div class="card-body">
+                        <h5 class="card-title">Camisa De Botões Estampada Sustentável</h5>
+                        <p class="card-text">Cor: Rosa</p>
+                        <p class="preco">R$ 55,00</p>
+                        <a href="roupa15.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                <div class="card">
+                    <img src="fotos/Blusa3.png" class="card-img-top" alt="Roupa16">
+                    <div class="card-body">
+                        <h5 class="card-title">Camisa Comprida De Botões Estampada Sustentável</h5>
+                        <p class="card-text">Cor: Rosa</p>
+                        <p class="preco">R$ 55,00</p>
+                        <a href="roupa16.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                <div class="card">
+                    <img src="fotos/Calca3.png" class="card-img-top" alt="Roupa17">
+                    <div class="card-body">
+                        <h5 class="card-title">Calça Jogger Com Bolsos Sustentável</h5>
+                        <p class="card-text">Cor: Jeans Claro</p>
+                        <p class="preco">R$ 129,90</p>
+                        <a href="roupa17.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                <div class="card">
+                    <img src="fotos/Blusa4.png" class="card-img-top" alt="Roupa19">
+                    <div class="card-body">
+                        <h5 class="card-title">Blusão Estampado Sustentável</h5>
+                        <p class="card-text">Cor: Cinza Escuro</p>
+                        <p class="preco">R$ 49,90</p>
+                        <a href="roupa19.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+    <section id="Feminino">
+        <h1 class="titulo-feminino">Feminino</h1>
+
+        <!--Tem que alterar para funcionar mexer nas classes -->
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Exemplo de card de anúncio -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Casaco.png" class="card-img-top" alt="Roupa1">
+                    <div class="card-body">
+                        <h5 class="card-title">Casaco Éden Sustentável</h5>
+                        <p class="card-text">Cor: Off White Floral</p>
+                        <p class="preco">R$ 180,00</p>
+                        <a href="roupa1.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Casaco3.png" class="card-img-top" alt="Roupa3">
+                    <div class="card-body">
+                        <h5 class="card-title">Casaco Jeans Flex sustentável</h5>
+                        <p class="card-text">Cor: Azul</p>
+                        <p class="preco">R$ 110,00</p>
+                        <a href="roupa3.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Saia3.png" class="card-img-top" alt="Roupa6">
+                    <div class="card-body">
+                        <h5 class="card-title">Saia Bordada De Cristais Sustentável</h5>
+                        <p class="card-text">Cor: Jeans Claro</p>
+                        <p class="preco">R$ 59,90</p>
+                        <a href="roupa6.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Cropped1.png" class="card-img-top" alt="Roupa7">
+                    <div class="card-body">
+                        <h5 class="card-title">Cropped Bordado De Cristais Sustentável</h5>
+                        <p class="card-text">Cor: Preto</p>
+                        <p class="preco">R$ 70,00</p>
+                        <a href="roupa7.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Calca1.png" class="card-img-top" alt="Roupa9">
+                    <div class="card-body">
+                        <h5 class="card-title">Calça Jeans Bordê Sustentável</h5>
+                        <p class="card-text">Cor: Jeans Claro Linhas Coloridas</p>
+                        <p class="preco">R$ 130,00</p>
+                        <a href="roupa9.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Calca2.png" class="card-img-top" alt="Roupa10">
+                    <div class="card-body">
+                        <h5 class="card-title">Calça Jeans Bordada Flores De Jardim Sustentável</h5>
+                        <p class="card-text">Cor: Jeans Claro</p>
+                        <p class="preco">R$ 110,00</p>
+                        <a href="roupa10.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Cropped3.png" class="card-img-top" alt="Roupa11">
+                    <div class="card-body">
+                        <h5 class="card-title">Cropped De Alça Por Sublimação Sustentável</h5>
+                        <p class="card-text">Cor: Vermelha</p>
+                        <p class="preco">R$ 60,00</p>
+                        <a href="roupa11.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-feminino">
+                <div class="card">
+                    <img src="fotos/Cropped4.png" class="card-img-top" alt="Roupa12">
+                    <div class="card-body">
+                        <h5 class="card-title">Cropped Drapeado Cores Vivas Sustentável</h5>
+                        <p class="card-text">Cor: Colorido</p>
+                        <p class="preco">R$ 39,90</p>
+                        <a href="roupa12.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                        <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                 </div>
+               </div>
+             </div> 
+            </div>
+        </div>
+    </section>
+
+    <section id="Masculino">
+        <h1 class="titulo-masculino">Masculino</h1>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                    <div class="card">
+                        <img src="fotos/Casaco2.png" class="card-img-top" alt="Roupa2">
+                        <div class="card-body">
+                            <h5 class="card-title">Casaco Patchwork Jeans Sustentável</h5>
+                            <p class="card-text">Cor: Violeta</p>
+                            <p class="preco">R$ 149,90</p>
+                            <a href="roupa2.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                            <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                    <div class="card">
+                        <img src="fotos/Blusa1.png" class="card-img-top" alt="Roupa13">
+                        <div class="card-body">
+                            <h5 class="card-title">Blusa De Zíper Com Gola Colarinho Star Sustentável</h5>
+                            <p class="card-text">Cor: Estampa De Estrela</p>
+                            <p class="preco">R$ 70,00</p>
+                            <a href="roupa13.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                            <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                    <div class="card">
+                        <img src="fotos/Bermuda1.png" class="card-img-top" alt="Roupa14">
+                        <div class="card-body">
+                            <h5 class="card-title">Bermuda Esportiva Practicality Sustentável</h5>
+                            <p class="card-text">Cor: Branco</p>
+                            <p class="preco">R$ 69,90</p>
+                            <a href="roupa14.html" class="btn btn-primary card-lin botao-comprar-agora">Comprar agora</a>
+                            <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                    <div class="card">
+                        <img src="fotos/Blusa2.png" class="card-img-top" alt="Roupa15">
+                        <div class="card-body">
+                            <h5 class="card-title">Camisa De Botões Estampada Sustentável</h5>
+                            <p class="card-text">Cor: Rosa</p>
+                            <p class="preco">R$ 55,00</p>
+                            <a href="roupa15.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                            <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                    <div class="card">
+                        <img src="fotos/Blusa3.png" class="card-img-top" alt="Roupa16">
+                        <div class="card-body">
+                            <h5 class="card-title">Camisa Comprida De Botões Estampada Sustentável</h5>
+                            <p class="card-text">Cor: Rosa</p>
+                            <p class="preco">R$ 55,00</p>
+                            <a href="roupa16.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                            <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                    <div class="card">
+                        <img src="fotos/Calca3.png" class="card-img-top" alt="Roupa17">
+                        <div class="card-body">
+                            <h5 class="card-title">Calça Jogger Com Bolsos Sustentável</h5>
+                            <p class="card-text">Cor: Jeans Claro</p>
+                            <p class="preco">R$ 129,90</p>
+                            <a href="roupa17.html" class="btn btn-primary card-link botao-comprar-agora">Comprar agora</a>
+                            <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 categoria-roupa categoria-masculino">
+                    <div class="card">
+                        <img src="fotos/Blusa4.png" class="card-img-top" alt="Roupa19">
+                        <div class="card-body">
+                            <h5 class="card-title">Blusão Estampado Sustentável</h5>
+                            <p class="card-text">Cor: Cinza Escuro</p>
+                            <p class="preco">R$ 49,90</p>
+                            <a href="roupa19.html" class="btn btn-primary card-lin botao-comprar-agora">Comprar agora</a>
+                            <button type="button" class="btn btn-info disabled" _msttexthash="203541" _msthash="126" id="visualizador">Visualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div>
+        <div>
+            <div>
+                <button onclick="voltarAoTopo()" class="botao-com-imagem">
+                    <img src="./fotos/setaparacima.png" alt="Seta para subir">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aqui fica o rodapé do site -->
+
+    <div class="footer">
+        <div class="footer-column">
+            <h3 class="titulo-footer">Moda Sustentável nas Redes Sociais</h3> 
+                <div class="configs-imagens">
+                    <div class="imagem-insta">
+                        <img src="./fotos/instagram.png" alt="">
+                    </div>
+                    <div class="imagem-face">
+                        <img src="./fotos/fpretoebranco.png" alt="">
+                    </div>
+                    <div class="imagem-x">
+                        <img src="./fotos/X-Logo-removebg-preview.png" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookies-mensagem" id="cookies-mensagem">
+        <div class="cookies-texto">
+            <p>Caro visitante, gostaríamos de informar que usamos cookies para garantir a melhor experiência possível em nosso site. Esses cookies nos ajudam a analisar o tráfego do site, personalizar o conteúdo e anúncios, além de fornecer recursos de mídia social. Ao continuar navegando em nosso site, você concorda com a nossa política de cookies. Para mais informações, consulte nossa Política de Privacidade. Obrigado pela sua visita e aproveite a sua experiência em nosso site!</p>
+            
+            <div class="cookies-btn">
+                <button type="button" class="btn btn-success distancia" _msttexthash="74100" _msthash="116" onclick="aceito()">Concordo</button>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+
+
+
+
+    <!-- Adiciona os cookies -->
+
+<!-- <div class="navigation">
+    <button id="next">&gt;</button>
+</div>
+</div> -->
+       
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calça Jeans Bordada Flores De Jardim Sustentável</title>
+    <link rel="stylesheet" href="css/compras.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap (1).css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-ligth bg-custom">
+        <div style="display: flex; align-items: center;">
+            <!-- ================================ -->
+            <a href="index.html">
+                <img src="./fotos/setaparaolado.png" alt="" class="imagem-seta-lado">
+            </a>
+            <!-- ================================ -->
+            <div id="logoft" class="logoft">
+              <img src="./fotos/sustentável__2_-removebg-preview.png" class="fotologo" alt="Logo">
+              
+          </div>
+        </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="#navbarnav">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="image-column">
+            <div class="imagem-borda">
+                <img src="./fotos/Calca2.png" alt="Descrição da Imagem" style="width:90%">
+            </div>
+        </div>
+        <div class="text-column">
+            <h2 class="titulo-compras">Calça Jeans Bordada Flores De Jardim Sustentável</h2>
+            <p class="cogigo-compras">Código: 878453366</p>
+            <p class="descricao-compras">Cor: Jeans Claro</p>
+            <h2 class="preco-compras">R$ 110,00</h2>
+            <h6 class="parcelamento-compras">7x de R$ 15,71</h6>
+            <p class="compartilhar-compras">Curtiu? Compartilhe essa peça!</p>
+            <!-- Aqui épra colocar as API's de compartilhamento do produto -->
+            <hr>
+            <h6 class="frete-compras">Calcular Frete</h6>
+                <label for="inputPassword" class="col-sm-2 col-form-label">CEP</label>
+                    <div class="col-sm-10">
+                        <form>
+                            <input type="number" id="cepInput" placeholder="__.___-___" style="width: 23%;">
+                        </form>
+                    </div>
+                    <button type="button" class="btn btn-success distancia" _msttexthash="74100" _msthash="116">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <div class="ava">
+        <h3>Avaliações</h3> 
+         </div>
+      <div class="card-container">
+         <div class="card">
+            <h4>Samantha Cary</h4>
+            <img src="./fotos/samanta.png" alt="Imagemperfil" id="perfil">
+            <p>Amei!! Combina com tudoooo! Já encomendei mais.</p>
+            <img src="./fotos/chapava.png" alt="Imagem 1">
+            </div>
+          <div class="modificar">
+          <div class="card">
+            <h4>Lúcia Mary</h4>
+            <img src="./fotos/lucia.png" alt="Imagemperfil" id="perfil">
+            <p>Super estiloso, ótimo para dias quentes!</p>
+            <img src="./fotos/chap2ava.png" alt="Imagem 2">
+          </div>
+        </div>
+    </div>
+  
+  <div class="adicionar-comentario">
+   <button id="abrirModalBtn"  type="button" class="btn btn-success abrirModalBtn" _msttexthash="74100" _msthash="116">Adicionar um Comentário</button>
+  </div>
+  
+  <!-- Modal -->
+  <div id="modal" class="modal">
+  <form action="#" method="post">
+    <label for="comentario">Comentário:</label>
+    <textarea id="comentario" name="comentario" rows="4" required></textarea>
+    <button type="button" onclick="abrirExploradorDeArquivos()" class="botao-upload">Upload</button>
+    <input type="file" id="inputArquivo" style="display: none;" multiple onchange="exibirNomesArquivos()">
+    <p id="nomesArquivos"></p>
+    <script>
+        function abrirExploradorDeArquivos() {
+          // Obtém a referência para o input de tipo "file"
+          var inputArquivo = document.getElementById('inputArquivo');
+        
+          // Simula o clique no input de tipo "file"
+          inputArquivo.click();
+        }
+    
+        function exibirNomesArquivos() {
+          var inputArquivo = document.getElementById('inputArquivo');
+          var nomesArquivos = document.getElementById('nomesArquivos');
+    
+          // Limpa o conteúdo anterior
+          nomesArquivos.innerHTML = "";
+    
+          // Adiciona o nome de cada arquivo selecionado
+          for (var i = 0; i < inputArquivo.files.length; i++) {
+            var nomeArquivo = document.createElement('p');
+            nomeArquivo.textContent = inputArquivo.files[i].name;
+            nomesArquivos.appendChild(nomeArquivo);
+          }
+        }
+      </script>
+    <button type="submit">Enviar Comentário</button>
+  </form>
+  <!-- Botão para fechar o modal -->
+  <button id="fecharModalBtn" class="fecharModalBtn">Sair</button>
+  </div>
+  
+  <style>
+  /* Estilo do modal */
+  .modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: rgb(179, 228, 201);
+  box-shadow: 0 4px 8px rgb(24, 68, 44);
+  padding: 20px;
+  text-align: center;
+  }
+  
+  .adicionar-comentario {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .botao-upload{
+    padding-top: 10%;
+  }
+  
+  .card-container {
+    display: flex;
+      justify-content: left;
+      align-items: center;
+  }
+  
+  .fecharModalBtn {
+    margin-top: 15px;
+  }
+  /* Estilo dos campos de formulário no modal */
+  .modal label {
+  display: block;
+  margin-bottom: 10px;
+  }
+  
+  .modal input,
+  .modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  }
+  
+  /* Estilo do botão do formulário no modal */
+  .modal button {
+    background-color: rgb(183, 155, 185);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  
+  
+  }
+  
+  </style>
+  <script>
+  const cepInput = document.getElementById('cepInput');
+  cepInput.addEventListener('input', function() {              
+      let value = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos              
+      if (value.length > 8) {              
+          value = value.slice(0, 8); // Limita a 8 dígitos  
+      }                          
+      cepInput.value = value;
+  });            
+  </script>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const abrirModalBtn = document.getElementById("abrirModalBtn");
+    const fecharModalBtn = document.getElementById("fecharModalBtn");
+    const modal = document.getElementById("modal");
+  
+    abrirModalBtn.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+  
+    fecharModalBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+  });
+  </script>
+  
+  </body>
+  </html>
